@@ -209,7 +209,8 @@ class DarwinTpl
      */
     protected function getFile( $file )
     {
-        return $this->templatesDir.DS.str_replace( '/', DS, $file ).'.'.$this->templateExtension;
+        return $this->templatesDir.DIRECTORY_SEPARATOR
+        .str_replace( '/', DIRECTORY_SEPARATOR, $file ).'.'.$this->templateExtension;
     }
 
     /**
@@ -289,7 +290,7 @@ class DarwinTpl
     }
 
     /**
-     * Ends a block and returns it's contents.
+     * EnDIRECTORY_SEPARATOR a block and returns it's contents.
      *
      * @return string the block contents.
      */

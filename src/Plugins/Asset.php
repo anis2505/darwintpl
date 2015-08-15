@@ -44,7 +44,7 @@ class Asset implements PluginInterface
 
     public function asset( $file='' )
     {
-        $path = $this->assetsDir.DS.str_replace('/',DS,$file);
+        $path = $this->assetsDir.DIRECTORY_SEPARATOR.str_replace('/',DIRECTORY_SEPARATOR,$file);
 
         if(file_exists($path))
             return $this->baseURL.'/'.$file;
