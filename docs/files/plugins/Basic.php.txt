@@ -1,0 +1,76 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: anis
+ * Date: 8/10/15
+ * Time: 10:39 PM
+ */
+
+namespace Darwin\Libs\Template\Extensions;
+
+use Darwin\Libs\Template\PluginInterface;
+
+class Basic implements PluginInterface
+{
+
+    public  $loops = array();
+
+    public function init($template)
+    {
+        $template->register('loop', $this, 'loop');
+        $template->register('end_loop', $this, 'endLoop');
+        //$template->register('css', $this, 'css');
+        //$template->register('js', $this, 'js');
+    }
+
+    public function loop($items, $key, $value='')
+    {
+        array_unshift( $this->loops, $items );
+        $this->loops[$items] = array($key, $value);
+        ob_start();
+        //$this->loops($items);
+    }
+
+    public function endLoop()
+    {
+        $loopContent = ob_get_contents();
+        ob_get_clean();
+        $items = array_shift($this->loops);
+
+        //foreach( ${$items} as $key )
+
+    }
+
+    public function asset( $file='' )
+    {
+        $path = BASE_PATH.DS.str_replace('/',DS,$file);
+
+        if(file_exists($path))
+            return BASE_URL.'/'.$file;
+        return '';
+    }
+
+    public function css( $file, $method = '' )
+    {
+        $path = BASE_URL.'/'. ltrim( $file, '/' );
+
+        $link='';
+
+        switch( $method )
+        {
+            case 'import':
+                $link='@import "'.$path.'"';
+                break;
+            default:
+                $link='<link href="'.$path.'" rel="stylesheet">';
+        }
+        return $link;
+    }
+
+    public function js( $file )
+    {
+        $path = BASE_URL.'/'. ltrim($file,'/');
+        return '<script type="text/javascript" src="'.$path.'"></script>';
+    }
+
+} 
