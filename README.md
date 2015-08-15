@@ -15,7 +15,7 @@ include the DarwinTpl class file.
 Or simply using composer
 
 	"require": {
-	   "anis2505/darwintpl"
+	   "anis2505/darwintpl":"dev-master"
 	}
 
 in your composer.json file.
