@@ -2,7 +2,6 @@
 ##Distribution repository
 
 ![GitHub Logo](/images/logo.png)
- Format: ![DarwinTpl logo](#)
 
 Php Template engine using native Php markup.
 No complicated or new syntax to learn.
