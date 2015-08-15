@@ -11,6 +11,14 @@ to get started. download the DarwinTpl package.
 include the DarwinTpl class file.
 
 	include(PATH_TO_DARWINTPL.'DarwinTpl.php')
+	
+Or simply using composer
+
+	"require": {
+	   "anis2505/darwintpl"
+	}
+
+in your composer.json file.
 
 in you script create an instance of the class
 
