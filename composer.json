@@ -1,6 +1,14 @@
 {
     "name": "anis2505/darwintpl",
     "description": "DarwinTpl template engine",
+    "keywords": [
+        "darwin",
+        "package",
+        "templating",
+        "templates",
+        "views",
+        "engines"
+    ],
     "type": "php-template-engine",
     "license": "MIT",
     "authors": [
@@ -14,10 +22,10 @@
     	"php": ">=5.3.0"
     },
     "autoload": {
-    	"classmap": [
-            "src/DarwinTpl.php",
-            "src/PluginInterface.php",
-            "src/plugins/"
-        ]
+    	"autoload": {
+		"psr-4": {
+		    "Darwin\\": "src"
+		}
+    	},
     }
 }

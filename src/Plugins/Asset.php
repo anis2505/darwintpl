@@ -6,9 +6,9 @@
  * Time: 10:39 PM
  */
 
-namespace src\plugins;
+namespace Darwin\Plugins;
 
-use \src\PluginInterface;
+use Darwin\PluginInterface;
 
 class Asset implements PluginInterface
 {
