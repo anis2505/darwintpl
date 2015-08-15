@@ -22,10 +22,10 @@ in your composer.json file.
 
 in you script create an instance of the class
 
-	$darwinTpl = new DarwinTpl( ROOT_TEMPLATES_PATH );
+	$darwinTpl = new Darwin\DarwinTpl( TEMPLATES_ROOT_PATH );
 
 Now you are ready to use DarwinTpl.
 
-	$template->render("templatefile");
+	$darwinTpl->render("templatefile");
 
 ## Please consider checking the samples provided with this repository.
