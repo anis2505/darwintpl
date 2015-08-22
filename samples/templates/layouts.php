@@ -33,7 +33,7 @@
 <?php $this->endblock() ?>
 
 <!-- When using layouts if a block is not called in the layout. it won't be shnow -->
-<?php $this->startblock('onotherblock') ?>
+<?php $this->startblock('oneotherblock') ?>
 
 This block won't be shown.
 because it's doesn't appear on the main layout.

@@ -6,7 +6,6 @@
  * Time: 6:46 PM
  */
 
-namespace Darwin;
 
 
 /**
@@ -59,6 +58,8 @@ class DarwinTpl
      */
     protected $templatesDir = __DIR__;
 
+    protected $partial;
+
     /**
      * @var string the layout of the current loaded template.
      */
@@ -70,9 +71,14 @@ class DarwinTpl
     protected $templateExtension = 'php';
 
 
-    public function __construct( $templatesDir )
+    public function __construct( $templatesDir, $partialsDir = '' )
     {
         $this->setTemplatesDir( $templatesDir );
+        
+        if( $partialsDir == '' )
+            $partialsDir = $templatesDir;
+
+        $this->partial = new Partials( $partialsDir );
     }
 
     /**
@@ -157,7 +163,9 @@ class DarwinTpl
      */
     public function register( $name, &$object, $method )
     {
-        $this->plugins[$name] = array( $object, $method );
+        $this->{$name} = $object->{$method}();
+
+        //$this->plugins[$name] = array( $object, $method );
     }
 
     /**
@@ -290,7 +298,7 @@ class DarwinTpl
     }
 
     /**
-     * EnDIRECTORY_SEPARATOR a block and returns it's contents.
+     * Ends a block and returns it's contents.
      *
      * @return string the block contents.
      */
@@ -348,6 +356,19 @@ class DarwinTpl
     {
         if( $this->checkTemplate( $file ) )
                 include_once $this->getFile( $file );
+    }
+
+    /**
+     * Render partial files.
+     *
+     * @param string the partial file.
+     * @param array the data parsed by the partial
+     *
+     *
+     */
+    public function partial( $parial, $data = array() )
+    {
+        return $this->partial->renderPartial( $parial, $data );
     }
 
     /**
@@ -434,4 +455,6 @@ class DarwinTpl
         return $buffer;
     }
 
-} 
+}
+
+

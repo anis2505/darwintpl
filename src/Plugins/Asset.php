@@ -6,7 +6,6 @@
  * Time: 10:39 PM
  */
 
-namespace Darwin\Plugins;
 
 use Darwin\PluginInterface;
 

@@ -33,6 +33,7 @@ define('DS', DIRECTORY_SEPARATOR);
 
 function __autoload($class_name)
 {
-    include __DIR__.DS.'..'.DS. str_replace('\\', DS, $class_name).'.php';
+    echo __DIR__.DS.'..'.DS.'src'.DS.str_replace('\\', DS, $class_name).'.php';
+    include __DIR__.DS.'..'.DS.'src'.DS.str_replace('\\', DS, $class_name).'.php';
 }
 

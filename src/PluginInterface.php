@@ -6,7 +6,6 @@
  * Time: 6:48 PM
  */
 
-namespace Darwin;
 
 interface PluginInterface
 {

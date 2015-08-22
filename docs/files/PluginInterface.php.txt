@@ -6,7 +6,6 @@
  * Time: 6:48 PM
  */
 
-namespace src;
 
 interface PluginInterface
 {
@@ -14,3 +13,4 @@ interface PluginInterface
     public function init( &$template );
 
 } 
+

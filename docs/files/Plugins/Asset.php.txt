@@ -6,9 +6,8 @@
  * Time: 10:39 PM
  */
 
-namespace src\plugins;
 
-use \src\PluginInterface;
+use Darwin\PluginInterface;
 
 class Asset implements PluginInterface
 {
@@ -44,7 +43,7 @@ class Asset implements PluginInterface
 
     public function asset( $file='' )
     {
-        $path = $this->assetsDir.DS.str_replace('/',DS,$file);
+        $path = $this->assetsDir.DIRECTORY_SEPARATOR.str_replace('/',DIRECTORY_SEPARATOR,$file);
 
         if(file_exists($path))
             return $this->baseURL.'/'.$file;
@@ -75,3 +74,4 @@ class Asset implements PluginInterface
     }
 
 } 
+
