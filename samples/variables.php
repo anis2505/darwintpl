@@ -10,7 +10,7 @@ require_once 'common.php';
  *
  */
 $templatesDir = __DIR__.DS.'templates';
-$template = new Darwin\DarwinTpl( $templatesDir );
+$template = new \Darwin\DarwinTpl( $templatesDir );
 
 
 /**

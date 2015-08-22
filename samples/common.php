@@ -30,10 +30,12 @@ if (defined('ENVIRONMENT'))
 
 define('DS', DIRECTORY_SEPARATOR);
 
+require_once __DIR__.DS.'..'.DS.'src'.DS.'Partials.php';
 
-function __autoload($class_name)
-{
-    echo __DIR__.DS.'..'.DS.'src'.DS.str_replace('\\', DS, $class_name).'.php';
-    include __DIR__.DS.'..'.DS.'src'.DS.str_replace('\\', DS, $class_name).'.php';
-}
+require_once __DIR__.DS.'..'.DS.'src'.DS.'DarwinTpl.php';
+
+require_once __DIR__.DS.'..'.DS.'src'.DS.'PluginInterface.php';
+
+require_once __DIR__.DS.'..'.DS.'src'.DS.'Plugins'.DS.'Asset.php';
+
 

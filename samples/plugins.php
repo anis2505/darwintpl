@@ -31,7 +31,7 @@ require_once 'common.php';
  *
  */
 $templatesDir = __DIR__.DS.'templates';
-$template = new \DarwinTpl( $templatesDir );
+$template = new \Darwin\DarwinTpl( $templatesDir );
 
 
 
@@ -44,7 +44,7 @@ $baseURL = '//localhost/anis/darwintpl/samples';
 /**
  * Adding the asset plugin to DarwinTpl's instance.
  */
-$template->addPlugin( new \src\plugins\Asset( $assetsDir, $baseURL ) );
+$template->addPlugin( new \Darwin\Plugins\Asset( $assetsDir, $baseURL ) );
 
 /**
  * rendering template

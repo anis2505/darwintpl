@@ -17,7 +17,7 @@ $partialsDir = $templatesDir.DS.'partials';
  * Create DarwinTpl instance
  *
  */
-$template = new \DarwinTpl( $templatesDir, $partialsDir );
+$template = new \Darwin\DarwinTpl( $templatesDir, $partialsDir );
 
 
 $data = array(
